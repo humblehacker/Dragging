@@ -13,5 +13,6 @@ struct DraggingApp: App {
         WindowGroup {
             ContentView()
         }
+        .windowResizability(.contentSize)
     }
 }
