@@ -12,11 +12,11 @@ struct ReorderableDragRelocateDelegate<Item: Reorderable>: DropDelegate {
     var moveAction: (IndexSet, Int) -> Void
 
     func dropEntered(info _: DropInfo) {
-        guard item != activeDragItem, let current = activeDragItem else { return }
-        guard let from = items.firstIndex(of: current) else { return }
+        guard item != activeDragItem, let activeDragItem else { return }
+        guard let from = items.firstIndex(of: activeDragItem) else { return }
         guard let to = items.firstIndex(of: item) else { return }
         hasChangedLocation = true
-        if items[to] != current {
+        if items[to] != activeDragItem {
             moveAction(IndexSet(integer: from), to > from ? to + 1 : to)
         }
     }
