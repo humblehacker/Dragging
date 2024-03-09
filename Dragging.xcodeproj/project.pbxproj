@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00753188465F9C82A3107D16 /* DragReorderExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFD00982C032B23670247B9 /* DragReorderExampleView.swift */; };
+		2F2ADCE00F216931FAFCA192 /* ConditionalDragModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9CC3EA486530633853863 /* ConditionalDragModifier.swift */; };
+		60E08BD0D415EF4E9A3CD390 /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33B9CBA84F9CB77CC78A050 /* NavigationDestination.swift */; };
 		63939C662B76DB82008DAF12 /* DraggingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63939C652B76DB82008DAF12 /* DraggingApp.swift */; };
-		63939C682B76DB82008DAF12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63939C672B76DB82008DAF12 /* ContentView.swift */; };
 		63939C6A2B76DB83008DAF12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63939C692B76DB83008DAF12 /* Assets.xcassets */; };
 		63939C6D2B76DB83008DAF12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63939C6C2B76DB83008DAF12 /* Preview Assets.xcassets */; };
+		7BB078FA21E6FE3DEBE54501 /* ReorderableForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CF59EA217313D574953F6 /* ReorderableForEach.swift */; };
+		9ADD7E111040724D2766FE08 /* ConditionalDraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF10B0C5391FF19159650699 /* ConditionalDraggableView.swift */; };
+		D5CB0C06B7EA1CB4BC94082A /* ReorderableDropOutsideDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E1C42054B20E747EF4991C /* ReorderableDropOutsideDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21B9CC3EA486530633853863 /* ConditionalDragModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConditionalDragModifier.swift; sourceTree = "<group>"; };
 		63939C622B76DB82008DAF12 /* Dragging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dragging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63939C652B76DB82008DAF12 /* DraggingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggingApp.swift; sourceTree = "<group>"; };
-		63939C672B76DB82008DAF12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		63939C692B76DB83008DAF12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63939C6C2B76DB83008DAF12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		63939C6E2B76DB83008DAF12 /* Dragging.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dragging.entitlements; sourceTree = "<group>"; };
+		C33B9CBA84F9CB77CC78A050 /* NavigationDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
+		EEFD00982C032B23670247B9 /* DragReorderExampleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DragReorderExampleView.swift; sourceTree = "<group>"; };
+		FF10B0C5391FF19159650699 /* ConditionalDraggableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConditionalDraggableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +61,11 @@
 			isa = PBXGroup;
 			children = (
 				63939C652B76DB82008DAF12 /* DraggingApp.swift */,
-				63939C672B76DB82008DAF12 /* ContentView.swift */,
 				63939C692B76DB83008DAF12 /* Assets.xcassets */,
 				63939C6E2B76DB83008DAF12 /* Dragging.entitlements */,
 				63939C6B2B76DB83008DAF12 /* Preview Content */,
+				C33B9CBA84F9CB77CC78A050 /* NavigationDestination.swift */,
+				D3ABC67B483D677BB6359497 /* Examples */,
 			);
 			path = Dragging;
 			sourceTree = "<group>";
@@ -67,6 +76,34 @@
 				63939C6C2B76DB83008DAF12 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B2BE77F10E7BDB1897342522 /* DragReorder */ = {
+			isa = PBXGroup;
+			children = (
+				EEFD00982C032B23670247B9 /* DragReorderExampleView.swift */,
+			);
+			name = DragReorder;
+			path = DragReorder;
+			sourceTree = "<group>";
+		};
+		D3ABC67B483D677BB6359497 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				B2BE77F10E7BDB1897342522 /* DragReorder */,
+				E2C3255FBD0BCADC95DD55C9 /* ConditionalDraggable */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		E2C3255FBD0BCADC95DD55C9 /* ConditionalDraggable */ = {
+			isa = PBXGroup;
+			children = (
+				FF10B0C5391FF19159650699 /* ConditionalDraggableView.swift */,
+				21B9CC3EA486530633853863 /* ConditionalDragModifier.swift */,
+			);
+			name = ConditionalDraggable;
+			path = ConditionalDraggable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63939C682B76DB82008DAF12 /* ContentView.swift in Sources */,
 				63939C662B76DB82008DAF12 /* DraggingApp.swift in Sources */,
+				60E08BD0D415EF4E9A3CD390 /* NavigationDestination.swift in Sources */,
+				00753188465F9C82A3107D16 /* DragReorderExampleView.swift in Sources */,
+				9ADD7E111040724D2766FE08 /* ConditionalDraggableView.swift in Sources */,
+				2F2ADCE00F216931FAFCA192 /* ConditionalDragModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

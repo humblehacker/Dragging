@@ -1,17 +1,19 @@
-//
-//  DraggingApp.swift
-//  Dragging
-//
-//  Created by David Whetstone on 2/9/24.
-//
-
 import SwiftUI
 
 @main
 struct DraggingApp: App {
+    let views: [NavigationDestination] = [
+        .init(title: "Conditional draggable") { ConditionalDraggableView() },
+        .init(title: "Drag reorder list") { DragReorderExampleView() },
+    ]
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                List(views, id: \.title) { $0 }
+                    .listStyle(.sidebar)
+                    .frame(width: 200)
+            }
         }
         .windowResizability(.contentSize)
     }
