@@ -14,6 +14,10 @@
 		630E58052B9D0F730080EC1C /* TCADragReorderListExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E58032B9D0F730080EC1C /* TCADragReorderListExampleView.swift */; };
 		630E58082B9D0FA60080EC1C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 630E58072B9D0FA60080EC1C /* ComposableArchitecture */; };
 		630E580B2B9D148D0080EC1C /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E580A2B9D148D0080EC1C /* RandomColor.swift */; };
+		630E58122B9D20580080EC1C /* TCAReorderableDropOutsideDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E580F2B9D1FF30080EC1C /* TCAReorderableDropOutsideDelegate.swift */; };
+		630E58132B9D20580080EC1C /* TCAReorderableDragRelocateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E58112B9D1FF30080EC1C /* TCAReorderableDragRelocateDelegate.swift */; };
+		630E58142B9D20580080EC1C /* TCADragReorderGridExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E580E2B9D1FE80080EC1C /* TCADragReorderGridExampleView.swift */; };
+		630E58152B9D20580080EC1C /* TCAReorderableForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E58102B9D1FF30080EC1C /* TCAReorderableForEach.swift */; };
 		63939C662B76DB82008DAF12 /* DraggingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63939C652B76DB82008DAF12 /* DraggingApp.swift */; };
 		63939C6A2B76DB83008DAF12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63939C692B76DB83008DAF12 /* Assets.xcassets */; };
 		63939C6D2B76DB83008DAF12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63939C6C2B76DB83008DAF12 /* Preview Assets.xcassets */; };
@@ -29,6 +33,10 @@
 		630E57FF2B9D092A0080EC1C /* DragReorderListExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragReorderListExampleView.swift; sourceTree = "<group>"; };
 		630E58032B9D0F730080EC1C /* TCADragReorderListExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCADragReorderListExampleView.swift; sourceTree = "<group>"; };
 		630E580A2B9D148D0080EC1C /* RandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColor.swift; sourceTree = "<group>"; };
+		630E580E2B9D1FE80080EC1C /* TCADragReorderGridExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCADragReorderGridExampleView.swift; sourceTree = "<group>"; };
+		630E580F2B9D1FF30080EC1C /* TCAReorderableDropOutsideDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAReorderableDropOutsideDelegate.swift; sourceTree = "<group>"; };
+		630E58102B9D1FF30080EC1C /* TCAReorderableForEach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAReorderableForEach.swift; sourceTree = "<group>"; };
+		630E58112B9D1FF30080EC1C /* TCAReorderableDragRelocateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAReorderableDragRelocateDelegate.swift; sourceTree = "<group>"; };
 		63939C622B76DB82008DAF12 /* Dragging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dragging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63939C652B76DB82008DAF12 /* DraggingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggingApp.swift; sourceTree = "<group>"; };
 		63939C692B76DB83008DAF12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +87,25 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		630E580C2B9D1F670080EC1C /* TCADragReorderGrid */ = {
+			isa = PBXGroup;
+			children = (
+				630E580E2B9D1FE80080EC1C /* TCADragReorderGridExampleView.swift */,
+				630E580D2B9D1F830080EC1C /* Reorderable */,
+			);
+			path = TCADragReorderGrid;
+			sourceTree = "<group>";
+		};
+		630E580D2B9D1F830080EC1C /* Reorderable */ = {
+			isa = PBXGroup;
+			children = (
+				630E58112B9D1FF30080EC1C /* TCAReorderableDragRelocateDelegate.swift */,
+				630E580F2B9D1FF30080EC1C /* TCAReorderableDropOutsideDelegate.swift */,
+				630E58102B9D1FF30080EC1C /* TCAReorderableForEach.swift */,
+			);
+			path = Reorderable;
+			sourceTree = "<group>";
+		};
 		63939C592B76DB82008DAF12 = {
 			isa = PBXGroup;
 			children = (
@@ -120,8 +147,8 @@
 		B2BE77F10E7BDB1897342522 /* DragReorderGrid */ = {
 			isa = PBXGroup;
 			children = (
-				05C7E6E96BF77450059EA51E /* Reorderable */,
 				1B53FFD1A8E8A3EC4C122336 /* DragReorderGridExampleView.swift */,
+				05C7E6E96BF77450059EA51E /* Reorderable */,
 			);
 			path = DragReorderGrid;
 			sourceTree = "<group>";
@@ -137,6 +164,7 @@
 		D3ABC67B483D677BB6359497 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				630E580C2B9D1F670080EC1C /* TCADragReorderGrid */,
 				630E58042B9D0F730080EC1C /* TCADragReorderList */,
 				B2BE77F10E7BDB1897342522 /* DragReorderGrid */,
 				E2C3255FBD0BCADC95DD55C9 /* ConditionalDraggable */,
@@ -238,6 +266,10 @@
 				9ADD7E111040724D2766FE08 /* ConditionalDraggableView.swift in Sources */,
 				630E580B2B9D148D0080EC1C /* RandomColor.swift in Sources */,
 				630E58002B9D092A0080EC1C /* DragReorderListExampleView.swift in Sources */,
+				630E58122B9D20580080EC1C /* TCAReorderableDropOutsideDelegate.swift in Sources */,
+				630E58132B9D20580080EC1C /* TCAReorderableDragRelocateDelegate.swift in Sources */,
+				630E58142B9D20580080EC1C /* TCADragReorderGridExampleView.swift in Sources */,
+				630E58152B9D20580080EC1C /* TCAReorderableForEach.swift in Sources */,
 				2F2ADCE00F216931FAFCA192 /* ConditionalDragModifier.swift in Sources */,
 				630E58052B9D0F730080EC1C /* TCADragReorderListExampleView.swift in Sources */,
 				65254B92C7F244226BC377BF /* DragReorderGridExampleView.swift in Sources */,

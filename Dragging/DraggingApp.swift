@@ -7,6 +7,7 @@ struct DraggingApp: App {
         .init(title: "Drag reorder list") { DragReorderListExampleView() },
         .init(title: "Drag reorder grid") { DragReorderGridExampleView() },
         .init(title: "TCA Drag reorder list") { TCADragReorderListExampleView() },
+        .init(title: "TCA Drag reorder grid") { TCADragReorderGridExampleView() },
     ]
 
     var body: some Scene {
