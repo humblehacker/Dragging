@@ -33,8 +33,12 @@ struct ContentView: View {
                 .border(Color.red, width: 2)
                 .dropDestination { items, location in
                     dropText = items.first as String?
+                    print("\(items) dropped @ \(location)")
                     return true
+                } isTargeted: { targeted in
+                    print("isTargeted: \(targeted)")
                 }
+
         }
         .padding()
         .fixedSize()
