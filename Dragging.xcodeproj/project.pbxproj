@@ -11,6 +11,9 @@
 		2F2ADCE00F216931FAFCA192 /* ConditionalDragModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9CC3EA486530633853863 /* ConditionalDragModifier.swift */; };
 		60E08BD0D415EF4E9A3CD390 /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33B9CBA84F9CB77CC78A050 /* NavigationDestination.swift */; };
 		630E58002B9D092A0080EC1C /* DragReorderListExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E57FF2B9D092A0080EC1C /* DragReorderListExampleView.swift */; };
+		630E58052B9D0F730080EC1C /* TCADragReorderListExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E58032B9D0F730080EC1C /* TCADragReorderListExampleView.swift */; };
+		630E58082B9D0FA60080EC1C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 630E58072B9D0FA60080EC1C /* ComposableArchitecture */; };
+		630E580B2B9D148D0080EC1C /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E580A2B9D148D0080EC1C /* RandomColor.swift */; };
 		63939C662B76DB82008DAF12 /* DraggingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63939C652B76DB82008DAF12 /* DraggingApp.swift */; };
 		63939C6A2B76DB83008DAF12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63939C692B76DB83008DAF12 /* Assets.xcassets */; };
 		63939C6D2B76DB83008DAF12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63939C6C2B76DB83008DAF12 /* Preview Assets.xcassets */; };
@@ -24,6 +27,8 @@
 		1B53FFD1A8E8A3EC4C122336 /* DragReorderGridExampleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DragReorderGridExampleView.swift; sourceTree = "<group>"; };
 		21B9CC3EA486530633853863 /* ConditionalDragModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConditionalDragModifier.swift; sourceTree = "<group>"; };
 		630E57FF2B9D092A0080EC1C /* DragReorderListExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragReorderListExampleView.swift; sourceTree = "<group>"; };
+		630E58032B9D0F730080EC1C /* TCADragReorderListExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCADragReorderListExampleView.swift; sourceTree = "<group>"; };
+		630E580A2B9D148D0080EC1C /* RandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColor.swift; sourceTree = "<group>"; };
 		63939C622B76DB82008DAF12 /* Dragging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dragging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63939C652B76DB82008DAF12 /* DraggingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggingApp.swift; sourceTree = "<group>"; };
 		63939C692B76DB83008DAF12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630E58082B9D0FA60080EC1C /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +61,22 @@
 				E91CF59EA217313D574953F6 /* ReorderableForEach.swift */,
 			);
 			path = Reorderable;
+			sourceTree = "<group>";
+		};
+		630E58042B9D0F730080EC1C /* TCADragReorderList */ = {
+			isa = PBXGroup;
+			children = (
+				630E58032B9D0F730080EC1C /* TCADragReorderListExampleView.swift */,
+			);
+			path = TCADragReorderList;
+			sourceTree = "<group>";
+		};
+		630E58092B9D147B0080EC1C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				630E580A2B9D148D0080EC1C /* RandomColor.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		63939C592B76DB82008DAF12 = {
@@ -76,6 +98,7 @@
 		63939C642B76DB82008DAF12 /* Dragging */ = {
 			isa = PBXGroup;
 			children = (
+				630E58092B9D147B0080EC1C /* Utils */,
 				63939C652B76DB82008DAF12 /* DraggingApp.swift */,
 				63939C692B76DB83008DAF12 /* Assets.xcassets */,
 				63939C6E2B76DB83008DAF12 /* Dragging.entitlements */,
@@ -114,6 +137,7 @@
 		D3ABC67B483D677BB6359497 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				630E58042B9D0F730080EC1C /* TCADragReorderList */,
 				B2BE77F10E7BDB1897342522 /* DragReorderGrid */,
 				E2C3255FBD0BCADC95DD55C9 /* ConditionalDraggable */,
 				D15F280881177A3C3D86D341 /* DragReorderList */,
@@ -146,6 +170,9 @@
 			dependencies = (
 			);
 			name = Dragging;
+			packageProductDependencies = (
+				630E58072B9D0FA60080EC1C /* ComposableArchitecture */,
+			);
 			productName = Dragging;
 			productReference = 63939C622B76DB82008DAF12 /* Dragging.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +201,9 @@
 				Base,
 			);
 			mainGroup = 63939C592B76DB82008DAF12;
+			packageReferences = (
+				630E58062B9D0FA60080EC1C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 63939C632B76DB82008DAF12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -206,8 +236,10 @@
 				D5CB0C06B7EA1CB4BC94082A /* ReorderableDropOutsideDelegate.swift in Sources */,
 				7BB078FA21E6FE3DEBE54501 /* ReorderableForEach.swift in Sources */,
 				9ADD7E111040724D2766FE08 /* ConditionalDraggableView.swift in Sources */,
+				630E580B2B9D148D0080EC1C /* RandomColor.swift in Sources */,
 				630E58002B9D092A0080EC1C /* DragReorderListExampleView.swift in Sources */,
 				2F2ADCE00F216931FAFCA192 /* ConditionalDragModifier.swift in Sources */,
+				630E58052B9D0F730080EC1C /* TCADragReorderListExampleView.swift in Sources */,
 				65254B92C7F244226BC377BF /* DragReorderGridExampleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +441,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		630E58062B9D0FA60080EC1C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		630E58072B9D0FA60080EC1C /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 630E58062B9D0FA60080EC1C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63939C5A2B76DB82008DAF12 /* Project object */;
 }
