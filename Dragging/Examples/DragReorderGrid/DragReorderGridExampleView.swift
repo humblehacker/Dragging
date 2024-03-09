@@ -40,6 +40,6 @@ struct DragReorderGridExampleView: View {
     }
 }
 
-struct GridData: Identifiable, Equatable {
+private struct GridData: Identifiable, Equatable {
     let id: Int
 }
