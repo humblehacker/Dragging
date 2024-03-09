@@ -4,22 +4,22 @@ import SwiftUI
 
 struct ReorderableDropOutsideDelegate<Item: Reorderable>: DropDelegate {
     @Binding
-    var active: Item?
+    var activeDragItem: Item?
 
     func dropUpdated(info _: DropInfo) -> DropProposal? {
         DropProposal(operation: .move)
     }
 
     func performDrop(info _: DropInfo) -> Bool {
-        active = nil
+        activeDragItem = nil
         return true
     }
 }
 
 public extension View {
     func reorderableForEachContainer<Item: Reorderable>(
-        active: Binding<Item?>
+        activeDragItem: Binding<Item?>
     ) -> some View {
-        onDrop(of: [.text], delegate: ReorderableDropOutsideDelegate(active: active))
+        onDrop(of: [.text], delegate: ReorderableDropOutsideDelegate(activeDragItem: activeDragItem))
     }
 }

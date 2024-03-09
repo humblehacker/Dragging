@@ -6,13 +6,13 @@ struct ReorderableDragRelocateDelegate<Item: Reorderable>: DropDelegate {
     let item: Item
     var items: [Item]
 
-    @Binding var active: Item?
+    @Binding var activeDragItem: Item?
     @Binding var hasChangedLocation: Bool
 
     var moveAction: (IndexSet, Int) -> Void
 
     func dropEntered(info _: DropInfo) {
-        guard item != active, let current = active else { return }
+        guard item != activeDragItem, let current = activeDragItem else { return }
         guard let from = items.firstIndex(of: current) else { return }
         guard let to = items.firstIndex(of: item) else { return }
         hasChangedLocation = true
@@ -27,7 +27,7 @@ struct ReorderableDragRelocateDelegate<Item: Reorderable>: DropDelegate {
 
     func performDrop(info _: DropInfo) -> Bool {
         hasChangedLocation = false
-        active = nil
+        activeDragItem = nil
         return true
     }
 }

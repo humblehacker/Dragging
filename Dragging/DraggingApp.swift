@@ -4,7 +4,7 @@ import SwiftUI
 struct DraggingApp: App {
     let views: [NavigationDestination] = [
         .init(title: "Conditional draggable") { ConditionalDraggableView() },
-        .init(title: "Drag reorder list") { DragReorderExampleView() },
+        .init(title: "Drag reorder grid") { DragReorderGridExampleView() },
     ]
 
     var body: some Scene {

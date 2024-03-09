@@ -2,17 +2,17 @@ import SwiftUI
 
 // origin: https://danielsaidi.com/blog/2023/08/30/enabling-drag-reordering-in-swiftui-lazy-grids-and-stacks
 
-struct DragReorderExampleView: View {
+struct DragReorderGridExampleView: View {
     @State
     private var items = (1 ... 100).map { GridData(id: $0) }
 
     @State
-    private var active: GridData?
+    private var activeDragItem: GridData?
 
     var body: some View {
         ScrollView(.vertical) {
             LazyVGrid(columns: [.init(.adaptive(minimum: 100, maximum: 200))]) {
-                ReorderableForEach(items, active: $active) { item in
+                ReorderableForEach(items, activeDragItem: $activeDragItem) { item in
                     shape
                         .fill(.white.opacity(0.5))
                         .frame(height: 100)
@@ -32,7 +32,7 @@ struct DragReorderExampleView: View {
         }
         .background(Color.blue.gradient)
         .scrollContentBackground(.hidden)
-        .reorderableForEachContainer(active: $active)
+        .reorderableForEachContainer(activeDragItem: $activeDragItem)
     }
 
     var shape: some Shape {

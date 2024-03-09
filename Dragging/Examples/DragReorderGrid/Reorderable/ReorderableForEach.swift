@@ -7,13 +7,13 @@ public typealias Reorderable = Equatable & Identifiable
 public struct ReorderableForEach<Item: Reorderable, Content: View, Preview: View>: View {
     public init(
         _ items: [Item],
-        active: Binding<Item?>,
+        activeDragItem: Binding<Item?>,
         @ViewBuilder content: @escaping (Item) -> Content,
         @ViewBuilder preview: @escaping (Item) -> Preview,
         moveAction: @escaping (IndexSet, Int) -> Void
     ) {
         self.items = items
-        _active = active
+        _activeDragItem = activeDragItem
         self.content = content
         self.preview = preview
         self.moveAction = moveAction
@@ -21,19 +21,19 @@ public struct ReorderableForEach<Item: Reorderable, Content: View, Preview: View
 
     public init(
         _ items: [Item],
-        active: Binding<Item?>,
+        activeDragItem: Binding<Item?>,
         @ViewBuilder content: @escaping (Item) -> Content,
         moveAction: @escaping (IndexSet, Int) -> Void
     ) where Preview == EmptyView {
         self.items = items
-        _active = active
+        _activeDragItem = activeDragItem
         self.content = content
         preview = nil
         self.moveAction = moveAction
     }
 
     @Binding
-    private var active: Item?
+    private var activeDragItem: Item?
 
     @State
     private var hasChangedLocation = false
@@ -63,13 +63,13 @@ public struct ReorderableForEach<Item: Reorderable, Content: View, Preview: View
 
     private func contentView(for item: Item) -> some View {
         content(item)
-            .opacity(active == item && hasChangedLocation ? 0.5 : 1)
+            .opacity(activeDragItem == item && hasChangedLocation ? 0.5 : 1)
             .onDrop(
                 of: [.text],
                 delegate: ReorderableDragRelocateDelegate(
                     item: item,
                     items: items,
-                    active: $active,
+                    activeDragItem: $activeDragItem,
                     hasChangedLocation: $hasChangedLocation
                 ) { from, to in
                     withAnimation {
@@ -80,7 +80,7 @@ public struct ReorderableForEach<Item: Reorderable, Content: View, Preview: View
     }
 
     private func dragData(for item: Item) -> NSItemProvider {
-        active = item
+        activeDragItem = item
         return NSItemProvider(object: "\(item.id)" as NSString)
     }
 }
