@@ -4,9 +4,13 @@ import SwiftUI
 
 public typealias TCAReorderable = Equatable & Identifiable
 
-public struct TCAReorderableForEach<Item: TCAReorderable, Content: View, Preview: View>: View {
+public struct TCAReorderableForEach<Data, Content: View, Preview: View>: View
+    where Data : RandomAccessCollection, Data.Element: TCAReorderable {
+
+    public typealias Item = Data.Element
+
     public init(
-        _ items: [Item],
+        _ items: Data,
         activeDragItem: Binding<Item?>,
         @ViewBuilder content: @escaping (Item) -> Content,
         @ViewBuilder preview: @escaping (Item) -> Preview,
@@ -20,7 +24,7 @@ public struct TCAReorderableForEach<Item: TCAReorderable, Content: View, Preview
     }
 
     public init(
-        _ items: [Item],
+        _ items: Data,
         activeDragItem: Binding<Item?>,
         @ViewBuilder content: @escaping (Item) -> Content,
         moveAction: @escaping (IndexSet, Int) -> Void
@@ -38,7 +42,7 @@ public struct TCAReorderableForEach<Item: TCAReorderable, Content: View, Preview
     @State
     private var hasChangedLocation = false
 
-    private let items: [Item]
+    private let items: Data
     private let content: (Item) -> Content
     private let preview: ((Item) -> Preview)?
     private let moveAction: (IndexSet, Int) -> Void
