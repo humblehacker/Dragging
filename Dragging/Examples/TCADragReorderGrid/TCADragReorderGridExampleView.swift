@@ -14,7 +14,7 @@ private struct Example {
     enum Action: BindableAction {
         case binding(BindingAction<State>)
         case cells(IdentifiedActionOf<Cell>)
-        case rowMoved(fromOffsets: IndexSet, toOffset: Int)
+        case rowMoved(from: Int, to: Int)
     }
 
     var body: some ReducerOf<Self> {
@@ -26,8 +26,8 @@ private struct Example {
                 return .none
             case .cells:
                 return .none
-            case let .rowMoved(fromOffsets: fromOffsets, toOffset: toOffset):
-                state.cells.move(fromOffsets: fromOffsets, toOffset: toOffset)
+            case let .rowMoved(from, to):
+                state.cells.move(fromOffsets: IndexSet(integer: from), toOffset: to)
                 return .none
             }
         }
@@ -78,7 +78,7 @@ struct TCADragReorderGridExampleView: View {
                         .overlay(Text("\(cellStore.id)"))
                         .contentShape(.dragPreview, shape)
                 } moveAction: { from, to in
-                    store.send(.rowMoved(fromOffsets: from, toOffset: to))
+                    store.send(.rowMoved(from: from as! Int, to: to as! Int))
                 }
             }.padding()
         }

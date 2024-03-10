@@ -5,8 +5,8 @@ import SwiftUI
 public typealias Reorderable = Equatable & Identifiable
 
 public struct ReorderableForEach<Data, Content: View, Preview: View>: View
-    where Data : RandomAccessCollection, Data.Element: Reorderable {
-
+    where Data: RandomAccessCollection, Data.Element: Reorderable
+{
     public typealias Item = Data.Element
 
     public init(
@@ -14,7 +14,7 @@ public struct ReorderableForEach<Data, Content: View, Preview: View>: View
         activeDragItem: Binding<Item?>,
         @ViewBuilder content: @escaping (Item) -> Content,
         @ViewBuilder preview: @escaping (Item) -> Preview,
-        moveAction: @escaping (IndexSet, Int) -> Void
+        moveAction: @escaping (Data.Index, Data.Index) -> Void
     ) {
         self.items = items
         _activeDragItem = activeDragItem
@@ -27,7 +27,7 @@ public struct ReorderableForEach<Data, Content: View, Preview: View>: View
         _ items: Data,
         activeDragItem: Binding<Item?>,
         @ViewBuilder content: @escaping (Item) -> Content,
-        moveAction: @escaping (IndexSet, Int) -> Void
+        moveAction: @escaping (Data.Index, Data.Index) -> Void
     ) where Preview == EmptyView {
         self.items = items
         _activeDragItem = activeDragItem
@@ -45,7 +45,7 @@ public struct ReorderableForEach<Data, Content: View, Preview: View>: View
     private let items: Data
     private let content: (Item) -> Content
     private let preview: ((Item) -> Preview)?
-    private let moveAction: (IndexSet, Int) -> Void
+    private let moveAction: (Data.Index, Data.Index) -> Void
 
     public var body: some View {
         ForEach(items) { item in

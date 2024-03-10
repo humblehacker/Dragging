@@ -26,7 +26,7 @@ struct DragReorderGridExampleView: View {
                         .overlay(Text("\(item.id)"))
                         .contentShape(.dragPreview, shape)
                 } moveAction: { from, to in
-                    items.move(fromOffsets: from, toOffset: to)
+                    items.move(fromOffsets: IndexSet(integer: from), toOffset: to)
                 }
             }.padding()
         }
