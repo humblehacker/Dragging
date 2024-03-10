@@ -8,16 +8,22 @@ private struct Example {
     @ObservableState
     struct State {
         var cells: IdentifiedArrayOf<Cell.State>
+        var activeDragItem: StoreOf<Cell>?
     }
 
-    enum Action {
+    enum Action: BindableAction {
+        case binding(BindingAction<State>)
         case cells(IdentifiedActionOf<Cell>)
         case rowMoved(fromOffsets: IndexSet, toOffset: Int)
     }
 
     var body: some ReducerOf<Self> {
+        BindingReducer()
+
         Reduce { state, action in
             switch action {
+            case .binding:
+                return .none
             case .cells:
                 return .none
             case let .rowMoved(fromOffsets: fromOffsets, toOffset: toOffset):
@@ -39,7 +45,6 @@ private struct Cell {
 
 struct TCADragReorderGridExampleView: View {
     @State fileprivate var store: StoreOf<Example>
-    @State private var activeDragItem: StoreOf<Cell>?
 
     init() {
         store = Store(
@@ -58,7 +63,7 @@ struct TCADragReorderGridExampleView: View {
             LazyVGrid(columns: [.init(.adaptive(minimum: 100, maximum: 200))]) {
                 ReorderableForEach(
                     store.scope(state: \.cells, action: \.cells),
-                    activeDragItem: $activeDragItem
+                    activeDragItem: $store.activeDragItem
                 ) { cellStore in
                     shape
                         .fill(.white.opacity(0.5))
@@ -79,7 +84,7 @@ struct TCADragReorderGridExampleView: View {
         }
         .background(Color.blue.gradient)
         .scrollContentBackground(.hidden)
-        .reorderableForEachContainer(activeDragItem: $activeDragItem)
+        .reorderableForEachContainer(activeDragItem: $store.activeDragItem)
     }
 
     var shape: some Shape {
