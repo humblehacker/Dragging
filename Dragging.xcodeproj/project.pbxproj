@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FB6CA6F2B1D08EBA2B5C8BB /* ReorderableDragRelocateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9599EBB4AC6121B3577F246 /* ReorderableDragRelocateDelegate.swift */; };
 		2F2ADCE00F216931FAFCA192 /* ConditionalDragModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9CC3EA486530633853863 /* ConditionalDragModifier.swift */; };
 		60E08BD0D415EF4E9A3CD390 /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33B9CBA84F9CB77CC78A050 /* NavigationDestination.swift */; };
 		630E58002B9D092A0080EC1C /* DragReorderListExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E57FF2B9D092A0080EC1C /* DragReorderListExampleView.swift */; };
@@ -22,9 +21,7 @@
 		63939C6A2B76DB83008DAF12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63939C692B76DB83008DAF12 /* Assets.xcassets */; };
 		63939C6D2B76DB83008DAF12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63939C6C2B76DB83008DAF12 /* Preview Assets.xcassets */; };
 		65254B92C7F244226BC377BF /* DragReorderGridExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53FFD1A8E8A3EC4C122336 /* DragReorderGridExampleView.swift */; };
-		7BB078FA21E6FE3DEBE54501 /* ReorderableForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CF59EA217313D574953F6 /* ReorderableForEach.swift */; };
 		9ADD7E111040724D2766FE08 /* ConditionalDraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF10B0C5391FF19159650699 /* ConditionalDraggableView.swift */; };
-		D5CB0C06B7EA1CB4BC94082A /* ReorderableDropOutsideDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E1C42054B20E747EF4991C /* ReorderableDropOutsideDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +39,7 @@
 		63939C692B76DB83008DAF12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63939C6C2B76DB83008DAF12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		63939C6E2B76DB83008DAF12 /* Dragging.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dragging.entitlements; sourceTree = "<group>"; };
-		68E1C42054B20E747EF4991C /* ReorderableDropOutsideDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReorderableDropOutsideDelegate.swift; sourceTree = "<group>"; };
 		C33B9CBA84F9CB77CC78A050 /* NavigationDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
-		E91CF59EA217313D574953F6 /* ReorderableForEach.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReorderableForEach.swift; sourceTree = "<group>"; };
-		E9599EBB4AC6121B3577F246 /* ReorderableDragRelocateDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReorderableDragRelocateDelegate.swift; sourceTree = "<group>"; };
 		FF10B0C5391FF19159650699 /* ConditionalDraggableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConditionalDraggableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,16 +55,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05C7E6E96BF77450059EA51E /* Reorderable */ = {
-			isa = PBXGroup;
-			children = (
-				E9599EBB4AC6121B3577F246 /* ReorderableDragRelocateDelegate.swift */,
-				68E1C42054B20E747EF4991C /* ReorderableDropOutsideDelegate.swift */,
-				E91CF59EA217313D574953F6 /* ReorderableForEach.swift */,
-			);
-			path = Reorderable;
-			sourceTree = "<group>";
-		};
 		630E58042B9D0F730080EC1C /* TCADragReorderList */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				1B53FFD1A8E8A3EC4C122336 /* DragReorderGridExampleView.swift */,
-				05C7E6E96BF77450059EA51E /* Reorderable */,
 			);
 			path = DragReorderGrid;
 			sourceTree = "<group>";
@@ -260,9 +243,6 @@
 			files = (
 				63939C662B76DB82008DAF12 /* DraggingApp.swift in Sources */,
 				60E08BD0D415EF4E9A3CD390 /* NavigationDestination.swift in Sources */,
-				0FB6CA6F2B1D08EBA2B5C8BB /* ReorderableDragRelocateDelegate.swift in Sources */,
-				D5CB0C06B7EA1CB4BC94082A /* ReorderableDropOutsideDelegate.swift in Sources */,
-				7BB078FA21E6FE3DEBE54501 /* ReorderableForEach.swift in Sources */,
 				9ADD7E111040724D2766FE08 /* ConditionalDraggableView.swift in Sources */,
 				630E580B2B9D148D0080EC1C /* RandomColor.swift in Sources */,
 				630E58002B9D092A0080EC1C /* DragReorderListExampleView.swift in Sources */,
