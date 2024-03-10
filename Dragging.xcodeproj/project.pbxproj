@@ -75,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				630E580E2B9D1FE80080EC1C /* TCADragReorderGridExampleView.swift */,
-				630E580D2B9D1F830080EC1C /* Reorderable */,
 			);
 			path = TCADragReorderGrid;
 			sourceTree = "<group>";
@@ -109,6 +108,7 @@
 		63939C642B76DB82008DAF12 /* Dragging */ = {
 			isa = PBXGroup;
 			children = (
+				630E580D2B9D1F830080EC1C /* Reorderable */,
 				630E58092B9D147B0080EC1C /* Utils */,
 				63939C652B76DB82008DAF12 /* DraggingApp.swift */,
 				63939C692B76DB83008DAF12 /* Assets.xcassets */,
