@@ -2,7 +2,7 @@ import SwiftUI
 
 // origin: https://danielsaidi.com/blog/2023/08/30/enabling-drag-reordering-in-swiftui-lazy-grids-and-stacks
 
-struct TCAReorderableDropOutsideDelegate<Item: TCAReorderable>: DropDelegate {
+struct ReorderableDropOutsideDelegate<Item: Reorderable>: DropDelegate {
     @Binding
     var activeDragItem: Item?
 
@@ -17,9 +17,9 @@ struct TCAReorderableDropOutsideDelegate<Item: TCAReorderable>: DropDelegate {
 }
 
 public extension View {
-    func tcaReorderableForEachContainer<Item: TCAReorderable>(
+    func reorderableForEachContainer<Item: Reorderable>(
         activeDragItem: Binding<Item?>
     ) -> some View {
-        onDrop(of: [.text], delegate: TCAReorderableDropOutsideDelegate(activeDragItem: activeDragItem))
+        onDrop(of: [.text], delegate: ReorderableDropOutsideDelegate(activeDragItem: activeDragItem))
     }
 }

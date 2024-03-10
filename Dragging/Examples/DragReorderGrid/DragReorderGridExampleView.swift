@@ -12,7 +12,7 @@ struct DragReorderGridExampleView: View {
     var body: some View {
         ScrollView(.vertical) {
             LazyVGrid(columns: [.init(.adaptive(minimum: 100, maximum: 200))]) {
-                TCAReorderableForEach(items, activeDragItem: $activeDragItem) { item in
+                ReorderableForEach(items, activeDragItem: $activeDragItem) { item in
                     shape
                         .fill(.white.opacity(0.5))
                         .frame(height: 100)
@@ -32,7 +32,7 @@ struct DragReorderGridExampleView: View {
         }
         .background(Color.blue.gradient)
         .scrollContentBackground(.hidden)
-        .tcaReorderableForEachContainer(activeDragItem: $activeDragItem)
+        .reorderableForEachContainer(activeDragItem: $activeDragItem)
     }
 
     var shape: some Shape {

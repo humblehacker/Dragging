@@ -2,8 +2,8 @@ import SwiftUI
 
 // origin: https://danielsaidi.com/blog/2023/08/30/enabling-drag-reordering-in-swiftui-lazy-grids-and-stacks
 
-struct TCAReorderableDragRelocateDelegate<Data>: DropDelegate
-    where Data : RandomAccessCollection, Data.Element: TCAReorderable
+struct ReorderableDragRelocateDelegate<Data>: DropDelegate
+    where Data : RandomAccessCollection, Data.Element: Reorderable
 {
     typealias Item = Data.Element
     

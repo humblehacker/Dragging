@@ -56,7 +56,7 @@ struct TCADragReorderGridExampleView: View {
     var body: some View {
         ScrollView(.vertical) {
             LazyVGrid(columns: [.init(.adaptive(minimum: 100, maximum: 200))]) {
-                TCAReorderableForEach(
+                ReorderableForEach(
                     store.scope(state: \.cells, action: \.cells),
                     activeDragItem: $activeDragItem
                 ) { cellStore in
@@ -79,7 +79,7 @@ struct TCADragReorderGridExampleView: View {
         }
         .background(Color.blue.gradient)
         .scrollContentBackground(.hidden)
-        .tcaReorderableForEachContainer(activeDragItem: $activeDragItem)
+        .reorderableForEachContainer(activeDragItem: $activeDragItem)
     }
 
     var shape: some Shape {

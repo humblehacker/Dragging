@@ -2,10 +2,10 @@ import SwiftUI
 
 // origin: https://danielsaidi.com/blog/2023/08/30/enabling-drag-reordering-in-swiftui-lazy-grids-and-stacks
 
-public typealias TCAReorderable = Equatable & Identifiable
+public typealias Reorderable = Equatable & Identifiable
 
-public struct TCAReorderableForEach<Data, Content: View, Preview: View>: View
-    where Data : RandomAccessCollection, Data.Element: TCAReorderable {
+public struct ReorderableForEach<Data, Content: View, Preview: View>: View
+    where Data : RandomAccessCollection, Data.Element: Reorderable {
 
     public typealias Item = Data.Element
 
@@ -70,7 +70,7 @@ public struct TCAReorderableForEach<Data, Content: View, Preview: View>: View
             .opacity(activeDragItem == item && hasChangedLocation ? 0.5 : 1)
             .onDrop(
                 of: [.text],
-                delegate: TCAReorderableDragRelocateDelegate(
+                delegate: ReorderableDragRelocateDelegate(
                     item: item,
                     items: items,
                     activeDragItem: $activeDragItem,
